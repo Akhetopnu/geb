@@ -1,6 +1,6 @@
 {
   "name": "@akhetopnu/utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Utils.",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Akhetopnu/akhetopnu-utils.git"
+    "url": "git+https://github.com/Akhetopnu/akhetopnu-utils-js.git"
   },
   "keywords": [
     "functional",
@@ -21,7 +21,7 @@
   },
   "license": "WTFPL",
   "bugs": {
-    "url": "https://github.com/Akhetopnu/akhetopnu-utils/issues"
+    "url": "https://github.com/Akhetopnu/akhetopnu-utils-js/issues"
   },
-  "homepage": "https://github.com/Akhetopnu/akhetopnu-utils#readme"
+  "homepage": "https://github.com/Akhetopnu/akhetopnu-utils-js#readme"
 }
