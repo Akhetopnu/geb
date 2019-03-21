@@ -1,0 +1,24 @@
+{
+  "name": "@akhetopnu/utils",
+  "version": "0.0.1",
+  "description": "Utils.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akhetopnu/akhetopnu-utils.git"
+  },
+  "keywords": [
+    "functional",
+    "pure",
+    "vanilla"
+  ],
+  "author": "Akhetopnu",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/Akhetopnu/akhetopnu-utils/issues"
+  },
+  "homepage": "https://github.com/Akhetopnu/akhetopnu-utils#readme"
+}
