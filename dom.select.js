@@ -1,7 +1,7 @@
-import { equals, pipe } from './utils.function';
-import { has, lower, replace, trim } from './utils.string';
-import { hidden, label, options, options_selected, target, text_content, value } from './utils.dom';
-import { not } from './utils.bool';
+import { equals, pipe } from './utifunction';
+import { has, lower, replace, trim } from './utilstring';
+import { hidden, label, options, options_selected, target, text_content, value } from './dom';
+import { not } from './bool';
 
 export const apply_fn_to_options_in_list = (nodes, fn) => vals =>
 	options(nodes)

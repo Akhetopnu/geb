@@ -1,6 +1,6 @@
-import { length } from './utils.array';
-import { not } from './utils.bool';
-import { pipe } from './utils.function';
+import { length } from './array';
+import { not } from './bool';
+import { pipe } from './function';
 
 export const exec = fn => (a) => (fn(a), a);
 const exec_2 = fn => (a, b) => (fn(a, b), a);

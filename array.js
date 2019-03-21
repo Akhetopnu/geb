@@ -1,6 +1,6 @@
-import * as json from './utils.json';
-import * as object from './utils.object';
-import { complement } from './utils.bool';
+import * as json from './json';
+import * as object from './object';
+import { complement } from './bool';
 
 export const EMPTY = object.freeze([]);
 const ARRAY = Array;

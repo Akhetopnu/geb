@@ -1,4 +1,4 @@
-import * as object from './utils.object';
+import * as object from './object';
 
 export const identity = x => x;
 export const apply = (data, fn) => fn(data);
