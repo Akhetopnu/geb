@@ -16,6 +16,9 @@
     "vanilla"
   ],
   "author": "Akhetopnu",
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "WTFPL",
   "bugs": {
     "url": "https://github.com/Akhetopnu/akhetopnu-utils/issues"
