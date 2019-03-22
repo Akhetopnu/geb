@@ -1,5 +1,6 @@
 import { append_child, on as dom_on, elem, exec, frag, parent } from './dom';
 import { pipe } from './function';
+import * as maps from './map';
 
 const appendable = factory => ([root, ...rest]) => [append_child(root, factory()), ...rest];
 // const appended = factory => root => (root.appendChild(factory()), root);
@@ -7,14 +8,15 @@ const appendable = factory => ([root, ...rest]) => [append_child(root, factory()
 const elem$ = tag => () => elem(tag);
 
 export const create = tag => appendable(elem$(tag));
-export const finalize = ([root, , ...rest]) => [root, ...rest];
-export const updater = ([root, refs, listeners]) => [root, refs, data => listeners.forEach(fn => fn(data))];
+export const finalize = ([root, , refs, listenerst]) => ((ref, update) => [root, ref, update])(
+	maps.get(refs),
+	data => listeners.forEach(fn => fn(data)),
+);
 
 export const builder = (...pipes) => pipe(
 	data => [frag(), data, new Map, []],
 	...pipes,
 	finalize,
-	updater,
 );
 
 const parent$ = ([root, ...rest]) => [parent(root), ...rest];
@@ -45,18 +47,3 @@ export const value = prop('value');
 
 export const bind = (setter, transformer) => exec(([node,,, watchers]) =>
 	watchers.push(data => setter(transformer(data))([node])));
-
-// export const bind = (setter, signal, initial) => {
-// 	console.log(setter, signal, initial);
-//
-// 	exec(([node, _, refs, watchers]) => {
-//
-// 		if (!watchers.has(node)) {
-// 			watchers.set(node, []);
-// 		}
-//
-// 		watchers.get(node).push([signal, setter]);
-// 		setter(initial)(node);
-// 	});
-//
-// };
