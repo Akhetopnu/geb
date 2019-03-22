@@ -38,7 +38,6 @@ export const checked = attr('checked')('');
 export const klass = attr('class');
 export const id = prop('id');
 export const text = prop('textContent');
-export const value = prop('id');
 export const placeholder = prop('placeholder');
 export const value = prop('value');
 
