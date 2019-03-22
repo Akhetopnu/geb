@@ -8,7 +8,7 @@ const appendable = factory => ([root, ...rest]) => [append_child(root, factory()
 const elem$ = tag => () => elem(tag);
 
 export const create = tag => appendable(elem$(tag));
-export const finalize = ([root, , refs, listenerst]) => ((ref, update) => [root, ref, update])(
+export const finalize = ([root, , refs, listeners]) => ((ref, update) => [root, ref, update])(
 	maps.get(refs),
 	data => listeners.forEach(fn => fn(data)),
 );
