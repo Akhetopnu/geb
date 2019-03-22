@@ -1,26 +1,24 @@
 {
-  "name": "@akhetopnu/utils",
-  "version": "0.0.4",
+  "name": "@geb/js",
+  "version": "0.0.2",
   "description": "Utils.",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Akhetopnu/akhetopnu-utils-js.git"
+    "url": "git+https://github.com/Akhetopnu/geb.git"
   },
   "keywords": [
     "functional",
     "pure",
     "vanilla"
   ],
-  "author": "Akhetopnu",
+  "author": "mateusz.walas",
   "publishConfig": {
     "access": "public"
   },
   "license": "WTFPL",
   "bugs": {
-    "url": "https://github.com/Akhetopnu/akhetopnu-utils-js/issues"
+    "url": "https://github.com/Akhetopnu/geb/issues"
   },
-  "homepage": "https://github.com/Akhetopnu/akhetopnu-utils-js#readme"
+  "homepage": "https://github.com/Akhetopnu/geb#readme"
 }
