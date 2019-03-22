@@ -8,11 +8,13 @@ const elem$ = tag => () => elem(tag);
 
 export const create = tag => appendable(elem$(tag));
 export const finalize = ([root, , ...rest]) => [root, ...rest];
+export const updater = ([root, refs, listeners]) => [root, refs, data => listeners.forEach(fn => fn(data))];
 
 export const builder = (...pipes) => pipe(
 	data => [frag(), data, new Map, []],
 	...pipes,
 	finalize,
+	updater,
 );
 
 const parent$ = ([root, ...rest]) => [parent(root), ...rest];
