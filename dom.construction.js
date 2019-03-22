@@ -1,7 +1,7 @@
 import { append_child, on as dom_on, elem, exec, frag, parent } from './dom';
 import { pipe } from './function';
 
-const appendable = factory => ([root, ...rest]) => [append_chid(root, factory()), ...rest];
+const appendable = factory => ([root, ...rest]) => [append_child(root, factory()), ...rest];
 // const appended = factory => root => (root.appendChild(factory()), root);
 
 const elem$ = tag => () => elem(tag);
