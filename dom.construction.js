@@ -1,13 +1,16 @@
-import { remove, comment, append_child, on as dom_on, off as dom_off, elem, exec, frag, parent } from './dom';
-import { always, apply, is as is_function, identity, pipe } from './function';
-import { is as is_array, foreach } from './array';
 import * as maps from './map';
 import * as settings from './settings';
+import { append_child, off as dom_off, on as dom_on, elem, exec, frag, parent, remove } from './dom';
+import { apply, identity, is as is_function, pipe } from './function';
+import { foreach, is as is_array } from './array';
 
 const appendable = factory => ([root, ...rest]) => [append_child(root, factory()), ...rest];
 
 export const create = tag => appendable(() => elem(tag));
-const finalize = ([root,, refs, [list, update], [,destruct]]) => [
+const finalize = ([root,, refs, [
+	// list,
+	update,
+], [, destruct]]) => [
 	root,
 	maps.get(refs),
 	update,
@@ -68,8 +71,8 @@ export const attach = (node, event, listener) => (
 
 export const ref = key => exec(([node,, refs]) => refs.set(key, node));
 export const on = event => listener => exec(([node,,, [, update, env], [destructors]]) => {
-	destructors.push(attach(node, event, e => {
-		listener(e, update, env);
+	destructors.push(attach(node, event, ev => {
+		listener(ev, update, env);
 	}));
 });
 export const click = on('click');
@@ -87,21 +90,28 @@ export const placeholder = prop('placeholder');
 export const value = prop('value');
 
 export const list = (getter, creator) => exec(input => {
-	const [root,,, [updates, update], [destructors, destruct]] = input;
-	const komment = append_child(root, comment());
+	const [root,,, [updates,
+		// update,
+	], [destructors,
+		// destruct<
+	]] = input;
+	// const komment = append_child(root, comment());
 	const fragment = frag();
-	const fragment_tmp = frag();
+	// const fragment_tmp = frag();
 	const nodes = [];
 	const nodes_updates = new WeakMap;
 	const nodes_destructors = new WeakMap;
 	const env = {};
-	let list;
+	let list = [];
 
 	let graveyard = [];
 	const graveyard_updates = new WeakMap;
 	const graveyard_destructors = new WeakMap;
 
-	const update_global = patch => updates.forEach(fn => fn({ ...env, ...patch }));
+	const update_global = patch => updates.forEach(fn => fn({
+		...env,
+		...patch,
+	}));
 
 	function nodes_foreach(node, i) {
 		nodes_updates.get(node).forEach(event => event(list[i], env));
@@ -135,7 +145,9 @@ export const list = (getter, creator) => exec(input => {
 		}
 
 		list = list_test;
+		// eslint-disable-next-line
 		const N = nodes.length;
+		// eslint-disable-next-line
 		const L = list.length;
 		if (L === 0) {
 			nodes.forEach(remove);
@@ -151,7 +163,7 @@ export const list = (getter, creator) => exec(input => {
 					// console.log('dodajemy brakujace nodey', node);
 					nodes.push(append_child(fragment, node));
 					const updates = graveyard_updates.get(node);
-					nodes_updates.set(node, updates)
+					nodes_updates.set(node, updates);
 					updates.forEach(event => event(list[i + required], env));
 
 					nodes_destructors.set(node, graveyard_destructors.get(node));
@@ -169,7 +181,7 @@ export const list = (getter, creator) => exec(input => {
 					// console.log('dodajemy brakujace nodey (za malo)', node);
 					nodes.push(append_child(fragment, node));
 					const updates = graveyard_updates.get(node);
-					nodes_updates.set(node, updates)
+					nodes_updates.set(node, updates);
 					updates.forEach(event => event(list[i + required], env));
 
 					nodes_destructors.set(node, graveyard_destructors.get(node));
@@ -214,8 +226,8 @@ export const list = (getter, creator) => exec(input => {
 
 	destructors.push(() => {
 		root.remove();
-		nodes_destructors.get(node).forEach(apply);
-		graveyard_destructors.get(node).forEach(apply);
-		// not sure how much more should I do here
+	// 	nodes_destructors.get(node).forEach(apply);
+	// 	graveyard_destructors.get(node).forEach(apply);
+	// 	// not sure how much more should I do here
 	});
 });

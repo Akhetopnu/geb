@@ -1,7 +1,7 @@
 import * as json from './json';
 import * as object from './object';
-import { identity } from './function';
 import { complement } from './bool';
+import { identity } from './function';
 
 export const EMPTY = object.freeze([]);
 const ARRAY = Array;
