@@ -1,53 +1,24 @@
 {
-  "_from": "@geb/js@latest",
-  "_id": "@geb/js@0.0.8",
-  "_inBundle": false,
-  "_integrity": "sha512-LzKwqNdAA0aJBHjV1FDe5v4W79wUxwct0v86pxxCuCARp3E4kI/CNFEF5POTo+BWTMFfUzOPJfgVoLzmI78deQ==",
-  "_location": "/@geb/js",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "@geb/js@latest",
-    "name": "@geb/js",
-    "escapedName": "@geb%2fjs",
-    "scope": "@geb",
-    "rawSpec": "latest",
-    "saveSpec": null,
-    "fetchSpec": "latest"
-  },
-  "_requiredBy": [
-    "#DEV:/",
-    "#USER"
-  ],
-  "_resolved": "https://registry.npmjs.org/@geb/js/-/js-0.0.7.tgz",
-  "_shasum": "38f23149c2577dd40bab16ca4128cc759f3e6af5",
-  "_spec": "@geb/js@latest",
-  "_where": "/home/akhetopnu/Documents/rt",
-  "author": {
-    "name": "mateusz.walas"
-  },
-  "bugs": {
-    "url": "https://github.com/Akhetopnu/geb/issues"
-  },
-  "bundleDependencies": false,
-  "deprecated": false,
+  "name": "@geb/js",
+  "version": "0.0.8",
   "description": "Utils.",
-  "homepage": "https://github.com/Akhetopnu/geb#readme",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akhetopnu/geb.git"
+  },
   "keywords": [
     "functional",
     "pure",
     "vanilla"
   ],
-  "license": "WTFPL",
-  "name": "@geb/js",
+  "author": "mateusz.walas",
   "publishConfig": {
     "access": "public"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Akhetopnu/geb.git"
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/Akhetopnu/geb/issues"
   },
-  "scripts": {},
-  "version": "0.0.7"
+  "homepage": "https://github.com/Akhetopnu/geb#readme"
 }
