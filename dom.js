@@ -47,6 +47,7 @@ export const template_factory = id => (template => {
 // CONSTRUCTORS
 export const elem = tag => document.createElement(tag);
 export const frag = () => document.createDocumentFragment();
+export const comment = (text = '') => document.createComment(text);
 export const textnode = str => document.createTextNode(str);
 
 export const append_child = (node, kid) => node.appendChild(kid);

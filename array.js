@@ -1,13 +1,16 @@
 import * as json from './json';
 import * as object from './object';
+import { identity } from './function';
 import { complement } from './bool';
 
 export const EMPTY = object.freeze([]);
 const ARRAY = Array;
 
+export const is = ARRAY.isArray;
+
 const truth = () => true;
 export const test = (len, fn = truth) => list =>
-	ARRAY.isArray(list) &&
+	is(list) &&
 	list.length === len &&
 	fn(list);
 
@@ -20,7 +23,7 @@ export const rest = slice(1);
 export const cartesian = list_a => list_b =>
 	list_a
 		.map(item_a => list_b.map(item_b => [item_a, item_b]))
-		.flatMap(x => x);
+		.flatMap(identity);
 
 export const foreach = fn => array => (array.forEach(fn), array);
 export const map = fn => array => array.map(fn);

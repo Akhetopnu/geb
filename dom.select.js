@@ -1,5 +1,5 @@
-import { equals, pipe } from './utifunction';
-import { has, lower, replace, trim } from './utilstring';
+import { equals, pipe } from './function';
+import { has, lower, replace, trim } from './string';
 import { hidden, label, options, options_selected, target, text_content, value } from './dom';
 import { not } from './bool';
 
